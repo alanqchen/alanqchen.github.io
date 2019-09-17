@@ -10,6 +10,19 @@ $(document).ready( function() {
 	$(document).ready(function(){
   	$('[data-toggle="tooltip"]').tooltip();
 	});
+  
+  $("#contact-link").on('click', function(event) {
+  	if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+  
 	var viewport = $(this); 
   var viewportHeight = viewport.height();
   var viewportWidth = viewport.width();
@@ -69,12 +82,4 @@ $(window).scroll(function(){
     $(".splashFade").removeClass("animatedFadeInUp");
     $(".splashFade").removeClass("fadeInUp");
     $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
-});
-
-$("#splashTwitter").click(function() {
-    window.location = "https:/twitter.com/nodinawe";
-});
-
-$("#splashLinkedIn").click(function() {
-    window.location = "linkedin.com/in/alan-chen-a07034171";
 });
