@@ -57,5 +57,5 @@ $("#splashTwitter").click(function() {
 });
 
 $("#splashLinkedIn").click(function() {
-	window.location = "linkedin.com/in/alan-chen-a07034171";
+    window.location = "linkedin.com/in/alan-chen-a07034171";
 });
