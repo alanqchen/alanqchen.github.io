@@ -1,0 +1,44 @@
+var currViewportHeight;
+
+$(document).ready( function() {
+	$("#arrow-down").click(function() {
+    $('html, body').animate({
+         scrollTop: $("#content-wrapper").offset().top
+     }, 1500);
+	});
+	$(document).ready(function(){
+  	$('[data-toggle="tooltip"]').tooltip();
+	});
+	var viewport = $(this); 
+  var viewportHeight = viewport.height();
+  var viewportWidth = viewport.width();
+  document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+  document.getElementById("content-wrapper").style.height = viewportHeight + "px";
+  document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
+  currViewportHeight = viewportHeight;
+  $("#arrow-down-wrapper").removeClass("animated");
+  $("#arrow-down-wrapper").removeClass("animatedFadeInUp");
+  $("#arrow-down-wrapper").removeClass("fadeInUp");
+});
+
+$(window).on('resize', function(){
+      var viewport = $(this); 
+      var viewportHeight = viewport.height();
+      var viewportWidth = viewport.width();
+      var contentHeight = $(document).height() - viewportHeight;
+      document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+      document.getElementById("content-wrapper").style.height = 100 + "%";
+      document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
+      currViewportHeight = viewportHeight;
+});
+
+$(window).scroll(function(){
+    $(".splashFade").removeClass("animated");
+    $(".splashFade").removeClass("animatedFadeInUp");
+    $(".splashFade").removeClass("fadeInUp");
+    $(".splashFade").css("opacity", 1 - $(window).scrollTop() / (currViewportHeight/2));
+});
+
+$("#splashTwitter").click(function() {
+    window.location = "https:/twitter.com/nodinawe";
+});
