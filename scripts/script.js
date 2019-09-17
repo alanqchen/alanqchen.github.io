@@ -55,3 +55,7 @@ $(window).scroll(function(){
 $("#splashTwitter").click(function() {
     window.location = "https:/twitter.com/nodinawe";
 });
+
+$("#splashLinkedIn").click(function() {
+	window.location = "linkedin.com/in/alan-chen-a07034171";
+});
