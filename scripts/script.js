@@ -79,10 +79,11 @@ $(window).on('load', function () {
   }
   //Responsive Down Arrow
   if(viewportHeight < 420) {
-		$("#arrow-down").removeClass("fa-5x");
+    $("#arrow-down").removeClass("fa-5x");
     $("#arrow-down").addClass("fa-2x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
   }
+  $('#loading').fadeOut(600);
 });
 
 $(window).on('resize', function(){
