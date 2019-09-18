@@ -37,6 +37,16 @@ $(document).ready( function() {
 		return false;
   });
   
+	if (this.hash !== "") {
+    event.preventDefault();
+    var hash = this.hash;
+    $('html, body').animate({
+			scrollTop: $(hash).offset().top
+    }, 800, function(){
+      window.location.hash = hash;
+    });
+  }
+	
   $("#arrow-down-wrapper").removeClass("animated");
   $("#arrow-down-wrapper").removeClass("animatedFadeInUp");
   $("#arrow-down-wrapper").removeClass("fadeInUp");
