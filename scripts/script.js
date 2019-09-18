@@ -21,10 +21,11 @@ $(document).ready( function() {
         window.location.hash = hash;
       });
     }
+		return false;
   });
   
   $("#photo-reel-link").on('click', function(event) {
-  	if (this.hash !== "") {
+    if (this.hash !== "") {
       event.preventDefault();
       var hash = this.hash;
       $('html, body').animate({
@@ -33,6 +34,7 @@ $(document).ready( function() {
         window.location.hash = hash;
       });
     }
+		return false;
   });
   
   $("#arrow-down-wrapper").removeClass("animated");
