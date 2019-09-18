@@ -109,11 +109,11 @@ $(window).on('resize', function(){
   }
 
   if(viewportHeight < 420) {
-		$("#arrow-down").removeClass("fa-5x");
+    $("#arrow-down").removeClass("fa-5x");
     $("#arrow-down").addClass("fa-2x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
   } else {
-  	$("#arrow-down").removeClass("fa-2x");
+    $("#arrow-down").removeClass("fa-2x");
     $("#arrow-down").addClass("fa-5x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-100px";
   }
