@@ -127,9 +127,9 @@ $(window).on('resize', function(){
   }
 });
 
-var splashFadeRemove = false
 
-$(window).scroll(function(){
+var splashFadeRemove = false
+var scroll = function () {
     if(!splashFadeRemove) {
     	$(".splashFade").removeClass("animated");
     	$(".splashFade").removeClass("animatedFadeInUp");
@@ -137,7 +137,25 @@ $(window).scroll(function(){
       splashFadeRemove = true;
     }
     
-    if($(window).scrollTop() / (currViewportHeight/2) < 1) {
-    	$(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
+    $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
+    
+};
+var waiting = false;
+
+$(window).scroll(function(){
+		if($(window).scrollTop() / (currViewportHeight/2) < 1) {
+      if (waiting) {
+          return;
+      }
+      waiting = true;
+
+      scroll();
+
+      setTimeout(function () {
+          waiting = false;
+      }, 50);
+      endScrollHandle = setTimeout(function () {
+          scroll();
+      }, 100);
     }
 });
