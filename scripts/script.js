@@ -21,7 +21,6 @@ $(document).ready( function() {
         window.location.hash = hash;
       });
     }
-		return false;
   });
   
   $("#photo-reel-link").on('click', function(event) {
@@ -34,17 +33,13 @@ $(document).ready( function() {
         window.location.hash = hash;
       });
     }
-		return false;
   });
   
-	if (this.hash !== "") {
-    event.preventDefault();
-    var hash = this.hash;
+  if(window.location.hash) {
+    // smooth scroll to the anchor id
     $('html, body').animate({
-			scrollTop: $(hash).offset().top
-    }, 800, function(){
-      window.location.hash = hash;
-    });
+      scrollTop: $(window.location.hash).offset().top 
+    }, 800, 'swing');
   }
 	
   $("#arrow-down-wrapper").removeClass("animated");
