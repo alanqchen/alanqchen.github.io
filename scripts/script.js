@@ -34,14 +34,14 @@ $(document).ready( function() {
       });
     }
   });
-
+  
   $("#arrow-down-wrapper").removeClass("animated");
   $("#arrow-down-wrapper").removeClass("animatedFadeInUp");
   $("#arrow-down-wrapper").removeClass("fadeInUp");
 });
 
 $(window).on('load', function () {
-	var viewport = $(this); 
+  var viewport = $(this); 
   var viewportHeight = viewport.height();
   console.log(viewportHeight);
   var viewportWidth = viewport.width();
@@ -55,7 +55,7 @@ $(window).on('load', function () {
   }
   document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
-  
+  //Responsive Image
   var imageWidth = viewportWidth * 0.2;
   if(viewportWidth > 735) {
     if(imageWidth < 300) {
@@ -69,6 +69,12 @@ $(window).on('load', function () {
   	imageWidth = viewportWidth * 0.7;
     document.getElementById("self-image").style.width = imageWidth + "px";
     document.getElementById("self-image").style.height = imageWidth + "px";
+  }
+  //Responsive Down Arrow
+  if(viewportHeight < 420) {
+		$("#arrow-down").removeClass("fa-5x");
+    $("#arrow-down").addClass("fa-2x");
+    document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
   }
 });
 
@@ -100,6 +106,16 @@ $(window).on('resize', function(){
   	imageWidth = viewportWidth * 0.7;
     document.getElementById("self-image").style.width = imageWidth + "px";
     document.getElementById("self-image").style.height = imageWidth + "px";
+  }
+
+  if(viewportHeight < 420) {
+		$("#arrow-down").removeClass("fa-5x");
+    $("#arrow-down").addClass("fa-2x");
+    document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
+  } else {
+  	$("#arrow-down").removeClass("fa-2x");
+    $("#arrow-down").addClass("fa-5x");
+    document.getElementById("arrow-down-wrapper").style.marginTop = "-100px";
   }
 });
 
