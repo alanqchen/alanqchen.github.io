@@ -116,6 +116,7 @@ body {
   filter: blur(0px) !important;
 }
 
+@media only screen and (min-width: 735px) {
 #content-wrapper {
   min-height: 100%;
   display: flex;
@@ -130,6 +131,25 @@ body {
   padding-right: 20px;
   padding-left: 20px;
   max-width: 1200px;
+}
+}
+
+@media only screen and (max-width: 735px) {
+#content-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 300px;
+  margin-top: 24px;
+  /* background-color: #242b33; */
+  background-color: white;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 20px;
+  padding-left: 20px;
+  max-width: 1200px;
+}  
 }
 
 #content-header-wrapper {
@@ -149,6 +169,12 @@ body {
 #splash-header {
   opacity: 1;
   font-size: 64px;
+}
+
+@media only screen and (max-width: 510px) {
+#splash-subheader {
+  display: none;
+}
 }
 
 #arrow-down-wrapper {
@@ -243,13 +269,26 @@ a {
   color: #b31900;
 }
 
+@media only screen and (min-width: 735px) {
 #self-image {
   width: 300px;
   height: auto;
   object-fit: cover;
+  float: right;
   margin: 0;
 }
+}
 
+@media only screen and (max-width: 735px) {
+#self-image {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 0px;
+}
+}
+
+@media only screen and (min-width: 735px) {
 #body-wrapper {
    display: flex;
    flex-direction: column;
@@ -259,11 +298,35 @@ a {
    border-width: 0 2px 0 0;
    border-color: gray;*/
 }
+}
 
+@media only screen and (max-width: 735px) {
+#body-wrapper {
+   display: flex;
+   flex-direction: column;
+   margin-right: 0px;
+   /*
+   border-style: solid;
+   border-width: 0 2px 0 0;
+   border-color: gray;*/
+}
+}
+
+@media only screen and (max-width: 735px) {
 #sidebar-wrapper {
   display: flex;
   flex-direction: column;
   align-content: center;
+  margin-bottom: 20px;
+}
+}
+
+@media only screen and (min-width: 735px) {
+#sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 }
 
 h6 {
@@ -366,4 +429,34 @@ note {
 .footer-text {
   font-style: italic;
   color: #d4d4d4;
+}
+
+.sub-text {
+  color: #393c3d;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.fix-bottom-margin {
+  font-weight: 350;
+  margin-bottom: 5px;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #212529;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  color: #212529;
+  text-decoration-style: dotted;
+}
+
+@media only screen and (max-width: 735px) {
+#content-photo {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
 }
