@@ -105,7 +105,7 @@ body {
     -webkit-animation-name: fadeInUp;
 }
 
-@media only screen and (min-height: 380px) {
+@media only screen and (min-height: 380px), (min-width: 510px) {
 #splash-inner-wrapper {
   display: flex;
   justify-content: center;
@@ -118,7 +118,7 @@ body {
 }
 }
 
-@media only screen and (max-height: 380px) {
+@media only screen and (max-height: 380px) and (max-width: 510px) {
 #splash-inner-wrapper {
   display: flex;
   justify-content: center;
@@ -244,17 +244,17 @@ body {
   }
 }
 
-@media only screen and (min-height: 405px) {
+@media only screen and (min-height: 450px) {
 #icon-links-wrapper {
   width: 70%;
   display: flex;
   justify-content: space-evenly;
   justify-items: space-evenly;
-  margin-top: 10%;
+  margin-top: 10vh;
 }
 }
 
-@media only screen and (max-height: 405px) {
+@media only screen and (max-height: 450px) {
 #icon-links-wrapper {
   width: 70%;
   display: flex;
