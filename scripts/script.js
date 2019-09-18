@@ -131,5 +131,7 @@ $(window).scroll(function(){
     $(".splashFade").removeClass("animated");
     $(".splashFade").removeClass("animatedFadeInUp");
     $(".splashFade").removeClass("fadeInUp");
-    $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
+    if($(window).scrollTop() / (currViewportHeight/2) < 1) {
+      $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
+    }	
 });
