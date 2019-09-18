@@ -127,11 +127,17 @@ $(window).on('resize', function(){
   }
 });
 
+var splashFadeRemove = false
+
 $(window).scroll(function(){
-    $(".splashFade").removeClass("animated");
-    $(".splashFade").removeClass("animatedFadeInUp");
-    $(".splashFade").removeClass("fadeInUp");
+    if(!splashFadeRemove) {
+    	$(".splashFade").removeClass("animated");
+    	$(".splashFade").removeClass("animatedFadeInUp");
+    	$(".splashFade").removeClass("fadeInUp");
+      splashFadeRemove = true;
+    }
+    
     if($(window).scrollTop() / (currViewportHeight/2) < 1) {
-      $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
-    }	
+    	$(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
+    }
 });
