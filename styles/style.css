@@ -100,6 +100,9 @@ body {
     animation-fill-mode: both;
     -webkit-animation-duration: 1s;
     -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: 400ms;
+    -moz-animation-delay: 400ms;
+    animation-delay: 400ms;
 }
 
 .animatedFadeInUp {
