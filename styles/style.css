@@ -44,6 +44,13 @@ body {
   animation-delay: 1s;
 }
 
+.short-delay {
+  -webkit-animation-delay: 400ms;
+  -moz-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+
+
 @-webkit-keyframes blur {
   to {
     -webkit-filter: blur(5px);
