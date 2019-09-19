@@ -50,7 +50,6 @@ $(document).ready( function() {
 $(window).on('load', function () {
   var viewport = $(this); 
   var viewportHeight = viewport.height();
-  console.log(viewportHeight);
   var viewportWidth = viewport.width();
   document.getElementById("content-wrapper").style.height = 100 + "%";
   minHeight = $("#content-wrapper").height();
