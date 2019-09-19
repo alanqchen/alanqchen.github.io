@@ -37,9 +37,11 @@ $(document).ready( function() {
   
   if(window.location.hash) {
     // smooth scroll to the anchor id
+    /*
     $('html, body').animate({
       scrollTop: $(window.location.hash).offset().top 
     }, 800, 'swing');
+		*/
   }
 	
   $("#arrow-down-wrapper").removeClass("animated");
