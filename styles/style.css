@@ -517,21 +517,20 @@ note {
 
 .job-arrow {
   margin-right: 0;
-  color: #b31900;
+  color: #8d9091;
   height: fit-content;
-  visibility: hidden;
 }
 
 #job1:hover #job1Arrow {
-  visibility: visible;
+  color: #b31900;
 }
 
 #job2:hover #job2Arrow {
-  visibility: visible;
+  color: #b31900;
 }
 
 #job3:hover #job3Arrow {
-  visibility: visible;
+  color: #b31900;
 }
 
 .closed {
