@@ -1,6 +1,20 @@
 var currViewportHeight;
 var minHeight
 
+var rotation = 0;
+
+var clickTimeout1 = false;
+var clickTimeout2 = false;
+var clickTimeout3 = false;
+var clickTimeout4 = false;
+
+jQuery.fn.rotate = function(degrees) {
+    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+                 'transform' : 'rotate('+ degrees +'deg)'});
+};
+
 $(document).ready( function() {
 	$("#arrow-down").click(function() {
     $('html, body').animate({
@@ -11,6 +25,54 @@ $(document).ready( function() {
   	$('[data-toggle="tooltip"]').tooltip();
 	});
   
+  $("#job1").on('click', function(event) {
+  	if (clickTimeout1) {
+      return;
+    }
+    clickTimeout1 = true;
+  	$("#job1-arrow-wrapper").toggleClass("closed");
+    $('#job1Description').collapse('toggle');
+    setTimeout(function () {
+          clickTimeout1 = false;
+    },350);
+    return;
+  });
+  
+  $("#job2").on('click', function(event) {
+  	if (clickTimeout2) {
+      return;
+    }
+    clickTimeout2 = true;
+  	$("#job2-arrow-wrapper").toggleClass("closed");
+    $('#job2Description').collapse('toggle');
+    setTimeout(function () {
+          clickTimeout2 = false;
+    },350);
+    return;
+  });
+  
+  $("#job3").on('click', function(event) {
+  	if (clickTimeout3) {
+      return;
+    }
+    clickTimeout3 = true;
+  	$("#job3-arrow-wrapper").toggleClass("closed");
+    $('#job3Description').collapse('toggle');
+    setTimeout(function () {
+          clickTimeout3 = false;
+    },350);
+    return;
+  });
+  
+  /*
+  $("#job1").toggle(function() {
+  	$("#job1Description').collapse('toggle');
+    $("#job1Arrow").rotate({ endDeg:90, persist:true });
+  }, function() {
+  	$("#job1Description").collapse('toggle');
+    $("#job1Arrow").rotate({ endDeg:-90, duration:0.8, easing:'ease-in' });
+  });
+  */
   $("#contact-link").on('click', function(event) {
   	if (this.hash !== "") {
       event.preventDefault();
@@ -24,7 +86,7 @@ $(document).ready( function() {
   });
   
   $("#photo-reel-link").on('click', function(event) {
-    if (this.hash !== "") {
+  	if (this.hash !== "") {
       event.preventDefault();
       var hash = this.hash;
       $('html, body').animate({
@@ -34,23 +96,21 @@ $(document).ready( function() {
       });
     }
   });
-  
   if(window.location.hash) {
     // smooth scroll to the anchor id
     /*
     $('html, body').animate({
       scrollTop: $(window.location.hash).offset().top 
     }, 800, 'swing');
-		*/
+    */
   }
-	
   $("#arrow-down-wrapper").removeClass("animated");
   $("#arrow-down-wrapper").removeClass("animatedFadeInUp");
   $("#arrow-down-wrapper").removeClass("fadeInUp");
 });
 
 $(window).on('load', function () {
-  var viewport = $(this); 
+	var viewport = $(this); 
   var viewportHeight = viewport.height();
   var viewportWidth = viewport.width();
   document.getElementById("content-wrapper").style.height = 100 + "%";
@@ -63,7 +123,7 @@ $(window).on('load', function () {
   }
   document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
-  //Responsive Image
+  
   var imageWidth = viewportWidth * 0.2;
   if(viewportWidth > 735) {
     if(imageWidth < 300) {
@@ -78,9 +138,8 @@ $(window).on('load', function () {
     document.getElementById("self-image").style.width = imageWidth + "px";
     document.getElementById("self-image").style.height = imageWidth + "px";
   }
-  //Responsive Down Arrow
   if(viewportHeight < 420) {
-    $("#arrow-down").removeClass("fa-5x");
+		$("#arrow-down").removeClass("fa-5x");
     $("#arrow-down").addClass("fa-2x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
   }
@@ -116,18 +175,16 @@ $(window).on('resize', function(){
     document.getElementById("self-image").style.width = imageWidth + "px";
     document.getElementById("self-image").style.height = imageWidth + "px";
   }
-
   if(viewportHeight < 420) {
-    $("#arrow-down").removeClass("fa-5x");
+		$("#arrow-down").removeClass("fa-5x");
     $("#arrow-down").addClass("fa-2x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
   } else {
-    $("#arrow-down").removeClass("fa-2x");
+  	$("#arrow-down").removeClass("fa-2x");
     $("#arrow-down").addClass("fa-5x");
     document.getElementById("arrow-down-wrapper").style.marginTop = "-100px";
   }
 });
-
 
 var splashFadeRemove = false
 var scroll = function () {
