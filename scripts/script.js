@@ -186,7 +186,8 @@ $(window).on('resize', function(){
   }
 });
 
-var splashFadeRemove = false
+var splashFadeRemove = false;
+var opacityNum;
 var scroll = function () {
     if(!splashFadeRemove) {
     	$(".splashFade").removeClass("animated");
@@ -194,9 +195,11 @@ var scroll = function () {
     	$(".splashFade").removeClass("fadeInUp");
       splashFadeRemove = true;
     }
-    
-    $(".splashFade").css("opacity", 0.999 - $(window).scrollTop() / (currViewportHeight/2));
-    
+    opacityNum = 0.999 - $(window).scrollTop() / (currViewportHeight/2);
+    if(opacityNum > 1) {
+    	opacityNum = 1;
+    }
+    $(".splashFade").css("opacity", opacityNum);
 };
 var waiting = false;
 
