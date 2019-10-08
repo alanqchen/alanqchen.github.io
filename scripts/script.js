@@ -137,9 +137,9 @@ $(window).on('load', function () {
   minHeight = $$.contentWrapper.height();
   document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
   if(viewportHeight > minHeight+144) {
-  	$$.contentWrapper.css('height', viewportHeight + "px");
+  	document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
-  	$$.contentWrapper.css('height', 100 + "%");
+  	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
   document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
@@ -174,9 +174,9 @@ $(window).on('resize', function(){
 	minHeight = $("#content-wrapper").height();
   document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
   if(viewportHeight > minHeight+144) {
- 	  $$.contentWrapper.css('height', viewportHeight + "px");
+ 	  document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
-  	$$.contentWrapper.css('height', 100 + "%");
+  	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
   document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
