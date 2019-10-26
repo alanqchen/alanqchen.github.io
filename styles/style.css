@@ -329,6 +329,7 @@ a {
    display: flex;
    flex-direction: column;
    margin-right: 20px;
+   width: 70%;
    /*
    border-style: solid;
    border-width: 0 2px 0 0;
