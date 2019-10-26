@@ -230,8 +230,6 @@ $(window).on('resize', function(){
 	}
 });
 
-if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-
 var splashFadeRemove = false;
 var opacityNum;
 var windw = this;
@@ -248,30 +246,41 @@ var scroll = function () {
     }
     $$.splashFade.css("opacity", opacityNum);  
 };
-	
+
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 	
 var waiting = false;
-	
-$(window).scroll(function(){
-		if($(window).scrollTop() / (currViewportHeight/2) < 1) {
-      if (waiting) {
-          return;
-      }
-      waiting = true;
-			
-      scroll();
-			stickySideBar();
-			
-      setTimeout(function () {
-          waiting = false;
-      }, 70);
+var sideBarWaiting = false;
 
+$(window).scroll(function(){
+		if(sideBarWaiting) {
+    	return;
+    } else {
+    	sideBarWaiting = true;
+    	stickySideBar();
+    	setTimeout(function () {
+        sideBarWaiting = false;
+      }, 12);
       endScrollHandle = setTimeout(function () {
-          scroll();
-					stickySideBar();
+        stickySideBar();
       }, 100);
     }
+		if (waiting) {
+          return;
+    } else {
+    		waiting = true;
+				if($(window).scrollTop() / (currViewportHeight/2) < 1) {
+      		scroll();
+    		}
+    		setTimeout(function () {
+        	waiting = false;
+      	}, 65);
+      	endScrollHandle = setTimeout(function () {
+        	scroll();
+      	}, 100);
+    }
 });
+}
 
 function stickySideBar() {
 	if(viewportWidth > 735) {
@@ -293,6 +302,4 @@ function stickySideBar() {
       		top: 0           
     	});
   	}
-}
-
 }
