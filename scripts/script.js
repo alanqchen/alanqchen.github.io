@@ -248,8 +248,9 @@ var scroll = function () {
     }
     $$.splashFade.css("opacity", opacityNum);  
 };
+	
+	
 var waiting = false;
-var sideBarWait = false;
 	
 $(window).scroll(function(){
 		if($(window).scrollTop() / (currViewportHeight/2) < 1) {
@@ -257,7 +258,6 @@ $(window).scroll(function(){
           return;
       }
       waiting = true;
-			sideBarWait = true;
 			
       scroll();
 			stickySideBar();
@@ -265,9 +265,7 @@ $(window).scroll(function(){
       setTimeout(function () {
           waiting = false;
       }, 70);
-			setTimeout(function () {
-          sideBarWait = false;
-      }, 20);
+
       endScrollHandle = setTimeout(function () {
           scroll();
 					stickySideBar();
