@@ -360,6 +360,10 @@ a {
 @media only screen and (min-width: 735px) {
 #sidebar-wrapper {
   display: flex;
+  align-self: flex-start;
+  height: auto;
+  position: relative;
+  top: 0px;
   flex-direction: column;
   align-content: center;
 }
