@@ -249,24 +249,30 @@ var scroll = function () {
     $$.splashFade.css("opacity", opacityNum);  
 };
 var waiting = false;
-
+var sideBarWait = false;
+	
 $(window).scroll(function(){
 		if($(window).scrollTop() / (currViewportHeight/2) < 1) {
       if (waiting) {
           return;
       }
       waiting = true;
-
+			sideBarWait = true;
+			
       scroll();
-
+			stickySideBar();
+			
       setTimeout(function () {
           waiting = false;
       }, 70);
+			setTimeout(function () {
+          sideBarWait = false;
+      }, 20);
       endScrollHandle = setTimeout(function () {
           scroll();
+					stickySideBar();
       }, 100);
     }
-    stickySideBar();
 });
 
 function stickySideBar() {
