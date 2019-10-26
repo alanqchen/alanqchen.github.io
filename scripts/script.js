@@ -36,7 +36,25 @@ jQuery.fn.rotate = function(degrees) {
 };
 
 $(document).ready( function() {
-	$("#arrow-down").click(function() {
+    $$ = {//cache of jQuery objects
+    arrowDown: $('#arrow-down'),
+    arrowDownWrapper: $('#arrow-down-wrapper'),
+    contentWrapper: $("#content-wrapper"),
+    job1: $("#job1"),
+    job1ArrowWrapper: $('#job1-arrow-wrapper'),
+    job1Description: $('#job1Description'),
+    job2: $("#job2"),
+    job2ArrowWrapper: $('#job2-arrow-wrapper'),
+    job2Description: $('#job2Description'),
+    job3: $("#job3"),
+    job3ArrowWrapper: $('#job3-arrow-wrapper'),
+    job3Description: $('#job3Description'),
+    contactLink: $('#contact-link'),
+    photoReelLink: $('#photo-reel-link'),
+    splashFade: $('.splashFade'),
+    selfImage: $("#self-image")
+    };
+    $("#arrow-down").click(function() {
     $('html, body').animate({
          scrollTop: $("#content-wrapper").offset().top
      }, 1500);
