@@ -225,8 +225,12 @@ $(window).on('resize', function(){
     $("#arrow-down").addClass("fa-5x");
     $$.arrowDownWrapper.style.marginTop = "-100px";
   }
-  stickySideBar();
+	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  	stickySideBar();
+	}
 });
+
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 
 var splashFadeRemove = false;
 var opacityNum;
@@ -285,4 +289,6 @@ function stickySideBar() {
       		top: 0           
     	});
   	}
+}
+
 }
