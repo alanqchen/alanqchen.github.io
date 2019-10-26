@@ -25,7 +25,8 @@ var $$ = {//cache of jQuery objects
     contactLink: $('#contact-link'),
     photoReelLink: $('#photo-reel-link'),
     splashFade: $('.splashFade'),
-    selfImage: $("#self-image")
+    selfImage: $("#self-image"),
+	sideBarWrapper: $("#sidebar-wrapper")
 };
 
 jQuery.fn.rotate = function(degrees) {
@@ -37,22 +38,23 @@ jQuery.fn.rotate = function(degrees) {
 
 $(document).ready( function() {
     $$ = {//cache of jQuery objects
-    arrowDown: $('#arrow-down'),
-    arrowDownWrapper: $('#arrow-down-wrapper'),
-    contentWrapper: $("#content-wrapper"),
-    job1: $("#job1"),
-    job1ArrowWrapper: $('#job1-arrow-wrapper'),
-    job1Description: $('#job1Description'),
-    job2: $("#job2"),
-    job2ArrowWrapper: $('#job2-arrow-wrapper'),
-    job2Description: $('#job2Description'),
-    job3: $("#job3"),
-    job3ArrowWrapper: $('#job3-arrow-wrapper'),
-    job3Description: $('#job3Description'),
-    contactLink: $('#contact-link'),
-    photoReelLink: $('#photo-reel-link'),
-    splashFade: $('.splashFade'),
-    selfImage: $("#self-image")
+		arrowDown: $('#arrow-down'),
+		arrowDownWrapper: $('#arrow-down-wrapper'),
+		contentWrapper: $("#content-wrapper"),
+		job1: $("#job1"),
+		job1ArrowWrapper: $('#job1-arrow-wrapper'),
+		job1Description: $('#job1Description'),
+		job2: $("#job2"),
+		job2ArrowWrapper: $('#job2-arrow-wrapper'),
+		job2Description: $('#job2Description'),
+		job3: $("#job3"),
+		job3ArrowWrapper: $('#job3-arrow-wrapper'),
+		job3Description: $('#job3Description'),
+		contactLink: $('#contact-link'),
+		photoReelLink: $('#photo-reel-link'),
+		splashFade: $('.splashFade'),
+		selfImage: $("#self-image"),
+		sideBarWrapper: $("#sidebar-wrapper")
     };
     $("#arrow-down").click(function() {
     $('html, body').animate({
@@ -63,7 +65,7 @@ $(document).ready( function() {
   	$('[data-toggle="tooltip"]').tooltip();
 	});
   
-  $("#job1").on('click', function(event) {
+  $$.job1.on('click', function(event) {
   	if (clickTimeout1) {
       return;
     }
@@ -76,7 +78,7 @@ $(document).ready( function() {
     return;
   });
   
-  $("#job2").on('click', function(event) {
+  $$.job2.on('click', function(event) {
   	if (clickTimeout2) {
       return;
     }
@@ -89,7 +91,7 @@ $(document).ready( function() {
     return;
   });
   
-  $("#job3").on('click', function(event) {
+  $$.job3.on('click', function(event) {
   	if (clickTimeout3) {
       return;
     }
@@ -111,7 +113,7 @@ $(document).ready( function() {
     $("#job1Arrow").rotate({ endDeg:-90, duration:0.8, easing:'ease-in' });
   });
   */
-  $("#contact-link").on('click', function(event) {
+  $$.contactLink.on('click', function(event) {
   	if (this.hash !== "") {
       event.preventDefault();
       var hash = this.hash;
@@ -123,7 +125,7 @@ $(document).ready( function() {
     }
   });
   
-  $("#photo-reel-link").on('click', function(event) {
+  $$.photoReelLink.on('click', function(event) {
   	if (this.hash !== "") {
       event.preventDefault();
       var hash = this.hash;
@@ -217,11 +219,11 @@ $(window).on('resize', function(){
   if(viewportHeight < 420) {
 		$("#arrow-down").removeClass("fa-5x");
     $("#arrow-down").addClass("fa-2x");
-    document.getElementById("arrow-down-wrapper").style.marginTop = "-54px";
+    $$.arrowDownWrapper.style.marginTop = "-54px";
   } else {
   	$("#arrow-down").removeClass("fa-2x");
     $("#arrow-down").addClass("fa-5x");
-    document.getElementById("arrow-down-wrapper").style.marginTop = "-100px";
+    $$.arrowDownWrapper.style.marginTop = "-100px";
   }
   stickySideBar();
 });
@@ -266,21 +268,21 @@ $(window).scroll(function(){
 function stickySideBar() {
 	if(viewportWidth > 735) {
   	if ($(window).scrollTop() >= currViewportHeight && $(window).scrollTop() < $("#contact").offset().top) {
-			$("#sidebar-wrapper").css({
-    		position: 'relative',
-      	top: $(window).scrollTop()-currViewportHeight
-    	});
+			$$.sideBarWrapper.css({
+    			position: 'relative',
+      			top: $(window).scrollTop()-currViewportHeight
+    		});
 		} else if($(window).scrollTop() >= $("#contact").offset().top){
-   		$("#sidebar-wrapper").css({
-    		position: 'relative',
-      	top: $("#contact").offset().top-currViewportHeight           
+   			$$.sideBarWrapper.css({
+    			position: 'relative',
+      			top: $("#contact").offset().top-currViewportHeight           
+    		});
+  		}
+  	}
+	else {
+  		$$.sideBarWrapper.css({
+    		position: 'static',
+      		top: 0           
     	});
   	}
-  }
-	else {
-  	$("#sidebar-wrapper").css({
-    	position: 'static',
-      top: 0           
-    });
-  }
 }
