@@ -25,7 +25,7 @@ var $$ = {//cache of jQuery objects
     contactLink: $('#contact-link'),
     photoReelLink: $('#photo-reel-link'),
     splashFade: $('.splashFade'),
-    selfImage: $('#self-image')
+    selfImage: $("#self-image")
 };
 
 jQuery.fn.rotate = function(degrees) {
