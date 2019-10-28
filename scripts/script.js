@@ -68,7 +68,7 @@ $(document).ready( function() {
     $("#arrow-down").click(function() {
     $('html, body').animate({
          scrollTop: $("#content-wrapper").offset().top
-     }, 1500);
+     }, 900);
 	});
 	$(document).ready(function(){
   	$('[data-toggle="tooltip"]').tooltip();
