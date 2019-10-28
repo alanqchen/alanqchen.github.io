@@ -637,7 +637,7 @@ note {
 
 .sticky-top {
   top: 3em !important;
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-sticky !important;
+  position: sticky !important;
 }
 
