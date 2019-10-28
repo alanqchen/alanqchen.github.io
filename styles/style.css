@@ -634,3 +634,8 @@ note {
 .extra-bottom-margin {
   margin-bottom: 20px;
 }
+
+.sticky-top {
+  top: 3em !important;
+}
+
