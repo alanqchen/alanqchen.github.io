@@ -224,6 +224,10 @@ body {
   z-index: 7;
 }
 
+#arrow-down:hover {
+  cursor: pointer;
+}
+
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
