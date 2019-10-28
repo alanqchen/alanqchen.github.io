@@ -192,7 +192,9 @@ $(window).on('load', function () {
     $$.arrowDown.addClass("fa-2x");
     $$.arrowDownWrapper.css('marginTop', "-54px");
   }
-  
+  if(viewportWidth <= 370) {
+  	$("#splash-header").html("Alan Chen");
+  }
   $('#loading').fadeOut(600);
 });
 
@@ -234,9 +236,11 @@ $(window).on('resize', function(){
     $("#arrow-down").addClass("fa-5x");
     $$.arrowDownWrapper.style.marginTop = "-100px";
   }
-	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-  	
-	}
+  if(viewportWidth <= 370) {
+    $("#splash-header").html("Alan Chen");
+  } else {
+  	$("#splash-header").html("Alan Qi Chen");
+  }
 });
 
 var splashFadeRemove = false;
