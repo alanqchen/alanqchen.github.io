@@ -262,19 +262,7 @@ var waiting = false;
 var sideBarWaiting = false;
 
 $(window).scroll(function(){
-		if(sideBarWaiting) {
-    	return;
-    } else {
-    	sideBarWaiting = true;
-    	stickySideBar();
-    	setTimeout(function () {
-        sideBarWaiting = false;
-      }, 12);
-      endScrollHandle = setTimeout(function () {
-        stickySideBar();
-      }, 100);
-    }
-		if (waiting) {
+	if (waiting) {
           return;
     } else {
     		waiting = true;
@@ -283,34 +271,12 @@ $(window).scroll(function(){
     		}
     		setTimeout(function () {
         	waiting = false;
-      	}, 65);
+      	}, 100);
       	endScrollHandle = setTimeout(function () {
         	scroll();
-      	}, 100);
+      	}, 200);
     }
 });
-}
-
-function stickySideBar() {
-	if(viewportWidth > 735) {
-  	if ($(window).scrollTop() >= currViewportHeight && $(window).scrollTop() < $("#contact").offset().top) {
-			$$.sideBarWrapper.css({
-    			position: 'relative',
-      			top: $(window).scrollTop()-currViewportHeight
-    		});
-		} else if($(window).scrollTop() >= $("#contact").offset().top){
-   			$$.sideBarWrapper.css({
-    			position: 'relative',
-      			top: $("#contact").offset().top-currViewportHeight           
-    		});
-  		}
-  	}
-	else {
-  		$$.sideBarWrapper.css({
-    		position: 'static',
-      		top: 0           
-    	});
-  	}
 }
 
 window.addEventListener('orientationchange', function () {
