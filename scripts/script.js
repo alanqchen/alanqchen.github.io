@@ -235,7 +235,7 @@ $(window).on('resize', function(){
     $$.arrowDownWrapper.style.marginTop = "-100px";
   }
 	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-  	stickySideBar();
+  	
 	}
 });
 
@@ -259,7 +259,6 @@ var scroll = function () {
 if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 	
 var waiting = false;
-var sideBarWaiting = false;
 
 $(window).scroll(function(){
 	if (waiting) {
