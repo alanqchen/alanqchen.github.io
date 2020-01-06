@@ -664,7 +664,7 @@ bold {
 }
 
 .spaceBetween {
-  display: float;
+  display: flex;
   justify-content: space-between;
 }
 
