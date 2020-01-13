@@ -252,6 +252,7 @@ body {
   justify-content: space-evenly;
   justify-items: space-evenly;
   margin-top: 10%;
+  max-width: 800px;
 }
 
 @media only screen and (min-width: 510px) and (max-height: 420px) {
