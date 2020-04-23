@@ -673,4 +673,6 @@ bold {
   justify-content: space-between;
 }
 
-
+.tech-icon {
+  margin-right: 10px;
+}
