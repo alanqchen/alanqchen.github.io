@@ -22,6 +22,9 @@ var $$ = {//cache of jQuery objects
     job3: $("#job3"),
     job3ArrowWrapper: $('#job3-arrow-wrapper'),
     job3Description: $('#job3Description'),
+    job4: $("#job4"),
+    job4ArrowWrapper: $('#job4-arrow-wrapper'),
+    job4Description: $('#job4Description'),
     contactLink: $('#contact-link'),
     photoReelLink: $('#photo-reel-link'),
     splashFade: $('.splashFade'),
@@ -49,7 +52,10 @@ $(document).ready( function() {
 		job2Description: $('#job2Description'),
 		job3: $("#job3"),
 		job3ArrowWrapper: $('#job3-arrow-wrapper'),
-		job3Description: $('#job3Description'),
+    job3Description: $('#job3Description'),
+    job4: $("#job4"),
+    job4ArrowWrapper: $('#job4-arrow-wrapper'),
+    job4Description: $('#job4Description'),
 		contactLink: $('#contact-link'),
 		photoReelLink: $('#photo-reel-link'),
 		splashFade: $('.splashFade'),
@@ -109,6 +115,19 @@ $(document).ready( function() {
     $('#job3Description').collapse('toggle');
     setTimeout(function () {
           clickTimeout3 = false;
+    },350);
+    return;
+  });
+
+  $$.job4.on('click', function(event) {
+  	if (clickTimeout4) {
+      return;
+    }
+    clickTimeout4 = true;
+  	$("#job4-arrow-wrapper").toggleClass("closed");
+    $('#job4Description').collapse('toggle');
+    setTimeout(function () {
+          clickTimeout4 = false;
     },350);
     return;
   });

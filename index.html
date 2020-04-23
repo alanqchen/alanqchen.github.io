@@ -1,5 +1,5 @@
 <!-- Hi there! Thanks for taking a look under the hood, I appreciate your curiosity! -->
-<!-- This website currently does have some minor flaws, so my current goal is to use React in the future design -->
+<!-- This website currently isn't the best PWA, so I plan on improving it in the future. -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,8 +38,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/alanqchen.github.io/styles/style.css"/>
-    <script type="text/javascript" src="/alanqchen.github.io/scripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <script type="text/javascript" src="scripts/script.js"></script>
   </head>
   <div id="loading"></div>
   <body>
@@ -94,6 +94,7 @@
             <p>
             I'm Alan Chen, a first-year student currently pursuing a degree in<text-accent>
             Computer Science and Engineering at The Ohio State University</text-accent>.
+            In this website you can find my education, experience, projects, and activities.
             </p>
             <p>
             If you would like to see projects I'm currently working on, you can check out my <a class="link" href="https://github.com/alanqchen">GitHub page</a>. 
@@ -101,6 +102,39 @@
             <p>
             I'm interested in <a id="photo-reel-link" class="link" href="#photo-reel">photography</a>, space, <a class="link" href="https://coaster-count.com/user/6013/ridden">rollercoasters</a>, and everything tech!
             </p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
+              Career Goals
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Career Goals</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="content-text">
+                      <p>
+                      I focus on finding unique problems to challenging engineering problems and thrive on projects which have impact. I'm always looking for the next challenge, and have
+                      a vast amount of communication experience in a variety of environments. From leadership roles in a team to working with small group, I always have a positive outlook
+                      and get the job done effectively. Currently, I would like to use these skills and further develop them in a environment where I can be challenged and learn by doing.
+                      <p></p>
+                      In the future, I would like to be able to create innovative solutions to the problems I'm passionate about. Feedback from others is important, and I realize that
+                      learning from my mentors is essential to reaching my goals. Ultimately, I hope to work on a challenging and rewarding project where I can make a positive difference
+                      for the world.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <br>
@@ -116,15 +150,16 @@
               <h4 class="fix-bottom-margin">The Ohio State University</h4>
             </div>
             <div class="col">
-              <p class="description clear-margin">GPA: 4.0</p>
+              <p class="description clear-margin"></p>
             </div>
           </div>
           <p class="description clear-margin">
           Computer Science and Engineering Honors Major
           </p>
           <p class="sub-text extra-bottom-margin">
-          Fundamentals of Engineering Honors - In Progress
-          <br>Calculus 3 - In Progress
+          Fundamentals of Engineering Honors
+          <br>Calculus 3
+          <br>GPA: 4.0
           </p>
           <note>Summer II 2018</note>
           <h4 class="fix-bottom-margin">Carnegie Mellon University</h4>
@@ -153,6 +188,26 @@
           <!-- EXPERIENCE -->
           <!--<div class="container no-gutters no-padding fix-width">-->
             <div class="row no-gutters job-list">
+
+              <div id="job4" class="col-12 col-sm-6 job">
+                <div class="job-header-wrapper job-right-margin">
+                  <div class="job-title">
+                    <h4 class="clear-margin">Caesar Creek Software</h4>
+                    <note>Intern</note>
+                  </div>
+                  <div id="job4-arrow-wrapper" class="arrow-wrapper">
+                    <i id="job4Arrow" class="fas fa-angle-right job-arrow"></i>
+                  </div>
+                  
+                </div>
+                <div id="job4Description" class="collapse job-right-margin">
+                  <p class="small-note"></p>
+                  <p class="smaller-note">May 2020 (Upcoming)</p>
+                  <p class="job-description">
+                  Upcoming internship.
+                  </p>
+                </div>
+              </div>
               
               <div id="job1" class="col-12 col-sm-6 job">
                 <div class="job-header-wrapper job-right-margin">
@@ -175,7 +230,7 @@
               </div>
               
               <div id="job2" class="col-12 col-sm-6 job">
-                <div class="job-header-wrapper job-left-margin">
+                <div class="job-header-wrapper job-right-margin">
                   <div class="job-title">
                     <h4 class="clear-margin">Cleveland Clinic</h4>
                     <note>Volunteer</note>
@@ -257,12 +312,19 @@
             <div class="half-prof-bar"></div>
           </div>
           <h5 class="description">Python/Flask</h5>
+
+          <div class="prof-spacer"></div>
+          <div class="prof-bars-wrapper">
+            <div class="prof-bar"></div>
+            <div class="half-prof-bar"></div>
+          </div>
+          <h5 class="description">Go</h5>
           
           <div class="prof-spacer"></div>
           <div class="prof-bars-wrapper">
             <div class="prof-bar"></div>
           </div>
-          <h5 class="description">MATLab</h5>
+          <h5 class="description">MATLAB</h5>
           
           <!-- SELECTED PROJECTS -->
           <br>
@@ -369,7 +431,7 @@
     
     </div>
     <div id="footer">
-      <note class="footer-text">Website last updated in January 2020. Resume last updated in February 2020.</note>
+      <note class="footer-text">Website last updated in April 2020. Resume last updated in February 2020.</note>
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

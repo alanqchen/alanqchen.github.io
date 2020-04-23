@@ -569,6 +569,10 @@ note {
   color: #b31900;
 }
 
+#job4:hover #job4Arrow {
+  color: #b31900;
+}
+
 .closed {
     -webkit-transform: rotate(90deg);  /* Chrome, Safari 3.1+ */
     -moz-transform: rotate(90deg);  /* Firefox 3.5-15 */
