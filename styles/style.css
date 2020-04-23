@@ -252,6 +252,7 @@ body {
   justify-content: space-evenly;
   justify-items: space-evenly;
   margin-top: 10%;
+  max-width: 800px;
 }
 
 @media only screen and (min-width: 510px) and (max-height: 420px) {
@@ -465,7 +466,7 @@ note {
 .half-prof-bar {
   margin-top: 0px;
   height: 6px;
-  width: 21%;
+  width: 12%;
   margin-right: 0px;
   background-color: #9ca3a6;
 }
@@ -654,4 +655,18 @@ note {
   font-size: 18px !important;
   font-weight: 345 !important;
 }
+
+.project-desc {
+  font-size: 1.25rem !important;
+}
+
+bold {
+  font-weight: 445 !important;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
 
