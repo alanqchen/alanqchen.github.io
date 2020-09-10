@@ -202,6 +202,7 @@ body {
 #splash-header {
   opacity: 1;
   font-size: 64px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 560px) {
