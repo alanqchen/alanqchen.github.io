@@ -265,6 +265,8 @@ $(window).on('resize', function(){
 var splashFadeRemove = false;
 var opacityNum;
 var windw = this;
+
+/*
 var scroll = function () {
     if(!splashFadeRemove) {
     	$$.splashFade.removeClass("animated");
@@ -278,27 +280,32 @@ var scroll = function () {
     }
     $$.splashFade.css("opacity", opacityNum);  
 };
+*/
+
+$$.splashFade.css("opacity", 1);
 
 if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 	
 var waiting = false;
 
-$(window).scroll(function(){
+/*
+$(window).scroll(function() {
 	if (waiting) {
           return;
-    } else {
-    		waiting = true;
-				if($(window).scrollTop() / (currViewportHeight/2) < 1) {
-      		scroll();
-    		}
-    		setTimeout(function () {
-        	waiting = false;
-      	}, 100);
-      	endScrollHandle = setTimeout(function () {
-        	scroll();
-      	}, 200);
-    }
+    	} else {
+		waiting = true;
+		if($(window).scrollTop() / (currViewportHeight/2) < 1) {
+			scroll();
+		}
+		setTimeout(function () {
+			waiting = false;
+      		}, 100);
+      		endScrollHandle = setTimeout(function () {
+        		scroll();
+      		}, 200);
+    	}
 });
+*/
 }
 
 window.addEventListener('orientationchange', function () {
