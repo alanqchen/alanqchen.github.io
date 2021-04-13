@@ -1,5 +1,7 @@
+var viewport = $(this); 
+var viewportHeight = viewport.height();
 var currViewportHeight;
-var viewportWidth;
+var viewportWidth = viewport.width();
 var minHeight
 
 var rotation = 0;
@@ -8,6 +10,7 @@ var clickTimeout1 = false;
 var clickTimeout2 = false;
 var clickTimeout3 = false;
 var clickTimeout4 = false;
+var clickTimeout5 = false;
 
 var $$ = {//cache of jQuery objects
     arrowDown: $('#arrow-down'),
@@ -56,6 +59,9 @@ $(document).ready( function() {
     job4: $("#job4"),
     job4ArrowWrapper: $('#job4-arrow-wrapper'),
     job4Description: $('#job4Description'),
+    job5: $("#job5"),
+    job5ArrowWrapper: $('#job5-arrow-wrapper'),
+    job5Description: $('#job5Description'),
 		contactLink: $('#contact-link'),
 		photoReelLink: $('#photo-reel-link'),
 		splashFade: $('.splashFade'),
@@ -71,7 +77,7 @@ $(document).ready( function() {
     		});
 			});
 		}
-    $("#arrow-down").click(function() {
+    $$.arrowDown.click(function() {
     $('html, body').animate({
          scrollTop: $("#content-wrapper").offset().top
      }, 900);
@@ -85,8 +91,8 @@ $(document).ready( function() {
       return;
     }
     clickTimeout1 = true;
-  	$("#job1-arrow-wrapper").toggleClass("closed");
-    $('#job1Description').collapse('toggle');
+  	$$.job1ArrowWrapper.toggleClass("closed");
+    $$.job1Description.collapse('toggle');
     setTimeout(function () {
           clickTimeout1 = false;
     },350);
@@ -98,8 +104,8 @@ $(document).ready( function() {
       return;
     }
     clickTimeout2 = true;
-  	$("#job2-arrow-wrapper").toggleClass("closed");
-    $('#job2Description').collapse('toggle');
+  	$$.job2ArrowWrapper.toggleClass("closed");
+    $$.job2Description.collapse('toggle');
     setTimeout(function () {
           clickTimeout2 = false;
     },350);
@@ -111,8 +117,8 @@ $(document).ready( function() {
       return;
     }
     clickTimeout3 = true;
-  	$("#job3-arrow-wrapper").toggleClass("closed");
-    $('#job3Description').collapse('toggle');
+  	$$.job3ArrowWrapper.toggleClass("closed");
+    $$.job3Description.collapse('toggle');
     setTimeout(function () {
           clickTimeout3 = false;
     },350);
@@ -124,10 +130,23 @@ $(document).ready( function() {
       return;
     }
     clickTimeout4 = true;
-  	$("#job4-arrow-wrapper").toggleClass("closed");
-    $('#job4Description').collapse('toggle');
+  	$$.job4ArrowWrapper.toggleClass("closed");
+    $$.job4Description.collapse('toggle');
     setTimeout(function () {
           clickTimeout4 = false;
+    },350);
+    return;
+  });
+
+  $$.job5.on('click', function(event) {
+  	if (clickTimeout5) {
+      return;
+    }
+    clickTimeout5 = true;
+  	$$.job5ArrowWrapper.toggleClass("closed");
+    $$.job5Description.collapse('toggle');
+    setTimeout(function () {
+          clickTimeout5 = false;
     },350);
     return;
   });
@@ -178,18 +197,17 @@ $(document).ready( function() {
 });
 
 $(window).on('load', function () {
-	var viewport = $(this); 
-  var viewportHeight = viewport.height();
+  viewportHeight = viewport.height();
   viewportWidth = viewport.width();
   $$.contentWrapper.css('height', 100 + "%");
   minHeight = $$.contentWrapper.height();
-  document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+  //document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
   if(viewportHeight > minHeight+144) {
   	document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
   	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
-  document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
+  //document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
   
   var imageWidth = viewportWidth * 0.2;
@@ -209,27 +227,32 @@ $(window).on('load', function () {
   if(viewportHeight < 420) {
 		$$.arrowDown.removeClass("fa-5x");
     $$.arrowDown.addClass("fa-2x");
-    $$.arrowDownWrapper.css('marginTop', "-54px");
+    $$.arrowDownWrapper.css('marginTop', '-54px');
+  } else {
+  	$$.arrowDown.removeClass("fa-2x");
+    $$.arrowDown.addClass("fa-5x");
+    $$.arrowDownWrapper.css('marginTop', '-100px');
   }
   if(viewportWidth <= 370) {
-  	$("#splash-header").html("Alan Chen");
+    $("#splash-header").html("Alan Chen");
+  } else {
+  	$("#splash-header").html("Alan Qi Chen");
   }
-  $('#loading').fadeOut(600);
+  $('#loading').fadeOut(300);
 });
 
 $(window).on('resize', function(){
-  var viewport = $(this); 
-  var viewportHeight = viewport.height();
+  viewportHeight = viewport.height();
   viewportWidth = viewport.width();
   $$.contentWrapper.css('height', 100 + "%");
 	minHeight = $("#content-wrapper").height();
-  document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+  //document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
   if(viewportHeight > minHeight+144) {
  	  document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
   	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
-  document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
+  //document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
       
   var imageWidth = viewportWidth * 0.2;
@@ -247,13 +270,13 @@ $(window).on('resize', function(){
     $$.selfImage.css('height', imageWidth + "px");
   }
   if(viewportHeight < 420) {
-		$("#arrow-down").removeClass("fa-5x");
-    $("#arrow-down").addClass("fa-2x");
-    $$.arrowDownWrapper.style.marginTop = "-54px";
+		$$.arrowDown.removeClass("fa-5x");
+    $$.arrowDown.addClass("fa-2x");
+    $$.arrowDownWrapper.css('marginTop', '-54px');
   } else {
-  	$("#arrow-down").removeClass("fa-2x");
-    $("#arrow-down").addClass("fa-5x");
-    $$.arrowDownWrapper.style.marginTop = "-100px";
+  	$$.arrowDown.removeClass("fa-2x");
+    $$.arrowDown.addClass("fa-5x");
+    $$.arrowDownWrapper.css('marginTop', '-100px');
   }
   if(viewportWidth <= 370) {
     $("#splash-header").html("Alan Chen");

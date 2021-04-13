@@ -13,7 +13,7 @@
       gtag('config', 'UA-151203652-1');
     </script>
 
-    <meta name="Description" content="Alan Qi Chen - Computer Science & Engineering Major at The Ohio State University">
+    <meta name="description" content="Alan Qi Chen - Computer Science & Engineering Major at The Ohio State University">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,14 +42,23 @@
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="styles/style.css"/>
     <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/animated-gradient.js"></script>
+
+    <!-- SEO TAGS -->
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Alan Qi Chen" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aqchen.com/" />
+    <meta property="og:description" content="Alan Qi Chen - Computer Science & Engineering Major at The Ohio State University" />
   </head>
-  <div id="loading"></div>
+  <div id="loading" ></div>
   <body>
     <div id="splash-wrapper">
       <div id="splash-inner-wrapper">
-        <div id="splash-image" class="blur">
-         
-        </div>
+        <canvas id="animated-gradient" width="10" height="10"></canvas>
         <h1 id="splash-header" class="splashFade animated animatedFadeInUp fadeInUp">
         Alan Qi Chen
         </h1>
@@ -57,12 +66,7 @@
         Always Motivated, Always Learning. 
         </h2>
         <div id="icon-links-wrapper" class="splashFade animated animatedFadeInUp fadeInUp">
-        <!--
-          <div id="splashTwitter" class="splash-icon" data-toggle="tooltip" title="Twitter">
-            <i class="fab fa-twitter fa-3x"></i>
-          </div>
-          -->
-          <div class="splash-icon" data-toggle="tooltip" title="Résumé" onClick="window.open('/alanqchen.github.io/Alan_Qi_Chen_Resume_AU2020_v7.pdf', '_blank', 'fullscreen=yes'); return false;">
+          <div class="splash-icon" data-toggle="tooltip" title="Résumé" onClick="window.open('/alanqchen.github.io/Alan_Qi_Chen_Resume_SP2021_v2.pdf', '_blank', 'fullscreen=yes'); return false;">
             <i class="far fa-file-alt fa-3x"></i>
           </div>
           <div class="splash-icon" onclick="location.href='https://github.com/alanqchen';" data-toggle="tooltip" title="GitHub">
@@ -75,10 +79,10 @@
             <i class="fas fa-handshake fa-3x"></i>
           </div>
         </div>
+        <div id="arrow-down-wrapper" class="splashFade bounce animated animatedFadeInUp fadeInUp">
+          <i id="arrow-down" class="fas fa-angle-double-down fa-5x"></i>
+       </div>
       </div>
-    </div>
-    <div id="arrow-down-wrapper" class="splashFade bounce animated animatedFadeInUp fadeInUp">
-       <i id="arrow-down" class="fas fa-angle-double-down fa-5x"></i>
     </div>
     
     <div id="center-fix">
@@ -145,12 +149,31 @@
           <!-- EXPERIENCE -->
           <!--<div class="container no-gutters no-padding fix-width">-->
             <div class="row no-gutters job-list">
+              <div id="job5" class="col-12 col-sm-6 job">
+                <div class="job-header-wrapper job-right-margin">
+                  <div class="job-title">
+                    <h4 class="clear-margin">United Launch Alliance</h4>
+                    <note>Software Engineer Intern</note>
+                  </div>
+                  <div id="job5-arrow-wrapper" class="arrow-wrapper">
+                    <i id="job5Arrow" class="fas fa-angle-right job-arrow"></i>
+                  </div>
+                  
+                </div>
+                <div id="job5Description" class="collapse job-right-margin">
+                  <p class="small-note"></p>
+                  <p class="smaller-note">May 2021 - August 2021</p>
+                  <p class="job-description">
+                  Upcoming summer internship.
+                  </p>
+                </div>
+              </div>
 
               <div id="job4" class="col-12 col-sm-6 job">
                 <div class="job-header-wrapper job-right-margin">
                   <div class="job-title">
                     <h4 class="clear-margin">Caesar Creek Software</h4>
-                    <note>Intern</note>
+                    <note>Software Engineer Intern</note>
                   </div>
                   <div id="job4-arrow-wrapper" class="arrow-wrapper">
                     <i id="job4Arrow" class="fas fa-angle-right job-arrow"></i>
@@ -398,7 +421,7 @@
             <a id="contact-link" class="caption link" href="#contact">
               Contact
             </a>
-            <a class="caption link" href="/alanqchen.github.io/Alan_Qi_Chen_Resume_AU2020_v7.pdf" download>
+            <a class="caption link" href="/alanqchen.github.io/Alan_Qi_Chen_Resume_SP2021_v2.pdf" download>
               Résumé
             </a>
           </div>
@@ -408,7 +431,7 @@
     
     </div>
     <div id="footer">
-      <note class="footer-text">Website last updated in September 2020. Resume last updated in September 2020.</note>
+      <note class="footer-text">Website last updated in April 2021. Resume last updated in March 2021.</note>
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
