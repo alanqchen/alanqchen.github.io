@@ -336,5 +336,6 @@ window.addEventListener('orientationchange', function () {
     document.body.style.display='none';
     setTimeout(function () {
       document.body.style.display = originalBodyStyle;
+      $(window).trigger('resize');
     }, 10);
 });
