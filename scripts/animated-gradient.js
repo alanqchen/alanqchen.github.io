@@ -27,7 +27,7 @@ $(document).ready( function() {
         col(x, y, R(x,y,t), G(x,y,t), B(x,y,t));
       }
     }
-    t = t + 0.065;
+    t = t + 0.055;
     window.requestAnimationFrame(run);
   }
 

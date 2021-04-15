@@ -1,8 +1,7 @@
-var viewport = $(this); 
-var viewportHeight = viewport.height();
+var viewportHeight;
 var currViewportHeight;
-var viewportWidth = viewport.width();
-var minHeight
+var viewportWidth;
+var minHeight;
 
 var rotation = 0;
 
@@ -12,29 +11,6 @@ var clickTimeout3 = false;
 var clickTimeout4 = false;
 var clickTimeout5 = false;
 
-var $$ = {//cache of jQuery objects
-    arrowDown: $('#arrow-down'),
-    arrowDownWrapper: $('#arrow-down-wrapper'),
-    contentWrapper: $("#content-wrapper"),
-    job1: $("#job1"),
-    job1ArrowWrapper: $('#job1-arrow-wrapper'),
-    job1Description: $('#job1Description'),
-    job2: $("#job2"),
-    job2ArrowWrapper: $('#job2-arrow-wrapper'),
-    job2Description: $('#job2Description'),
-    job3: $("#job3"),
-    job3ArrowWrapper: $('#job3-arrow-wrapper'),
-    job3Description: $('#job3Description'),
-    job4: $("#job4"),
-    job4ArrowWrapper: $('#job4-arrow-wrapper'),
-    job4Description: $('#job4Description'),
-    contactLink: $('#contact-link'),
-    photoReelLink: $('#photo-reel-link'),
-    splashFade: $('.splashFade'),
-    selfImage: $("#self-image"),
-	sideBarWrapper: $("#sidebar-wrapper")
-};
-
 jQuery.fn.rotate = function(degrees) {
     $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
                  '-moz-transform' : 'rotate('+ degrees +'deg)',
@@ -43,6 +19,9 @@ jQuery.fn.rotate = function(degrees) {
 };
 
 $(document).ready( function() {
+    var viewport = $(this); 
+    viewportHeight = viewport.height();
+    viewportWidth = viewport.width();
     $$ = {//cache of jQuery objects
 		arrowDown: $('#arrow-down'),
 		arrowDownWrapper: $('#arrow-down-wrapper'),
@@ -197,6 +176,7 @@ $(document).ready( function() {
 });
 
 $(window).on('load', function () {
+  var viewport = $(this); 
   viewportHeight = viewport.height();
   viewportWidth = viewport.width();
   $$.contentWrapper.css('height', 100 + "%");
@@ -242,6 +222,7 @@ $(window).on('load', function () {
 });
 
 $(window).on('resize', function(){
+  var viewport = $(this); 
   viewportHeight = viewport.height();
   viewportWidth = viewport.width();
   $$.contentWrapper.css('height', 100 + "%");
@@ -305,7 +286,7 @@ var scroll = function () {
 };
 */
 
-$$.splashFade.css("opacity", 1);
+//$$.splashFade.css("opacity", 1);
 
 if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
 	
