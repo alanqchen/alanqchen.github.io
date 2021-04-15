@@ -220,6 +220,11 @@ body {
   z-index: 7;
 }
 
+#arrow-down {
+  color: #393c3d;
+  opacity: 0.55;
+}
+
 #arrow-down:hover {
   cursor: pointer;
 }

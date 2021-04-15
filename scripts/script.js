@@ -2,6 +2,7 @@ var viewportHeight;
 var currViewportHeight;
 var viewportWidth;
 var minHeight;
+var $$;
 
 var rotation = 0;
 
@@ -47,15 +48,7 @@ $(document).ready( function() {
 		selfImage: $("#self-image"),
 		sideBarWrapper: $("#sidebar-wrapper")
     };
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-			$(window).on('orientationchange', function(e) {
-     		$.mobile.changePage(window.location.href, {
-        	allowSamePageTransition: true,
-        	transition: 'none',
-        	reloadPage: true
-    		});
-			});
-		}
+
     $$.arrowDown.click(function() {
     $('html, body').animate({
          scrollTop: $("#content-wrapper").offset().top
@@ -176,6 +169,31 @@ $(document).ready( function() {
 });
 
 $(window).on('load', function () {
+  $$ = {//cache of jQuery objects
+		arrowDown: $('#arrow-down'),
+		arrowDownWrapper: $('#arrow-down-wrapper'),
+		contentWrapper: $("#content-wrapper"),
+		job1: $("#job1"),
+		job1ArrowWrapper: $('#job1-arrow-wrapper'),
+		job1Description: $('#job1Description'),
+		job2: $("#job2"),
+		job2ArrowWrapper: $('#job2-arrow-wrapper'),
+		job2Description: $('#job2Description'),
+		job3: $("#job3"),
+		job3ArrowWrapper: $('#job3-arrow-wrapper'),
+    job3Description: $('#job3Description'),
+    job4: $("#job4"),
+    job4ArrowWrapper: $('#job4-arrow-wrapper'),
+    job4Description: $('#job4Description'),
+    job5: $("#job5"),
+    job5ArrowWrapper: $('#job5-arrow-wrapper'),
+    job5Description: $('#job5Description'),
+		contactLink: $('#contact-link'),
+		photoReelLink: $('#photo-reel-link'),
+		splashFade: $('.splashFade'),
+		selfImage: $("#self-image"),
+		sideBarWrapper: $("#sidebar-wrapper")
+    };
   var viewport = $(this); 
   viewportHeight = viewport.height();
   viewportWidth = viewport.width();
@@ -220,7 +238,7 @@ $(window).on('load', function () {
   } else {
   	$("#splash-header").html("Alan Qi Chen");
   }
-  $('#loading').fadeOut(300);
+  $('#loading').fadeOut(200);
 });
 
 $(window).on('resize', function(){
@@ -315,12 +333,8 @@ $(window).scroll(function() {
 });
 */
 }
-
+/*
 window.addEventListener('orientationchange', function () {
-    var originalBodyStyle = getComputedStyle(document.body).getPropertyValue('display');
-    document.body.style.display='none';
-    setTimeout(function () {
-      document.body.style.display = originalBodyStyle;
-      $(window).trigger('resize');
-    }, 10);
+    $(window).trigger('resize');
 });
+*/
