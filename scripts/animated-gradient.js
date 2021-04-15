@@ -12,7 +12,7 @@ $(document).ready( function() {
   }
 
   var G = function(x, y, t) {
-    return( Math.floor(172 + 36*Math.sin( (x*x*Math.cos(t/4)+y*y*Math.sin(t/3))/700 ) ) );
+    return( Math.floor(162 + 36*Math.sin( (x*x*Math.cos(t/4)+y*y*Math.sin(t/3))/700 ) ) );
   }
 
   var B = function(x, y, t) {
@@ -27,7 +27,7 @@ $(document).ready( function() {
         col(x, y, R(x,y,t), G(x,y,t), B(x,y,t));
       }
     }
-    t = t + 0.055;
+    t = t + 0.028;
     window.requestAnimationFrame(run);
   }
 

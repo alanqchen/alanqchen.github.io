@@ -182,11 +182,13 @@ $(window).on('load', function () {
   $$.contentWrapper.css('height', 100 + "%");
   minHeight = $$.contentWrapper.height();
   //document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+  /*
   if(viewportHeight > minHeight+144) {
   	document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
   	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
+  */
   //document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
   
@@ -228,11 +230,13 @@ $(window).on('resize', function(){
   $$.contentWrapper.css('height', 100 + "%");
 	minHeight = $("#content-wrapper").height();
   //document.getElementById("splash-wrapper").style.height = viewportHeight + "px";
+  /*
   if(viewportHeight > minHeight+144) {
  	  document.getElementById('content-wrapper').style.height = viewportHeight + "px";
   } else {
   	document.getElementById('content-wrapper').style.height = 100 + "%";
   }
+  */
   //document.getElementById("splash-inner-wrapper").style.width = viewportWidth + "px";
   currViewportHeight = viewportHeight;
       
